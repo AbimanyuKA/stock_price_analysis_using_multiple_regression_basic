@@ -1,4 +1,4 @@
-#Stock Price Analysis Using Multiple Linear Regression
+Stock Price Analysis Using Multiple Linear Regression
 Overview
 This project analyzes stock price movements and predicts future trends using multiple linear regression. The dataset includes synthetic stock data and external economic factors, and the analysis is implemented in Python and R.
 
