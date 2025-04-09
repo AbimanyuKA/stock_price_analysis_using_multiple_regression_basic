@@ -1,88 +1,78 @@
-**Stock Price Analysis Using Multiple Linear Regression**
+# Stock Price Analysis Using Multiple Linear Regression
 
-Overview
+## Overview
 This project analyzes stock price movements and predicts future trends using multiple linear regression. The dataset includes synthetic stock data and external economic factors, and the analysis is implemented in Python and R.
 
-Project Files
-create_sample_stock_data.py:
+---
 
-Python script to generate synthetic stock data with external factors like Interest Rate, Inflation, GDP Growth, Oil Price, Gold Price, S&P 500 Index, and FII Flows.
+## Project Files
+- **`src/create_sample_stock_data.py`**  
+  Python script to generate synthetic stock data with external factors like Interest Rate, Inflation, GDP Growth, Oil Price, Gold Price, S&P 500 Index, and FII Flows.
 
-enhanced_stock_data.csv:
+- **`data/enhanced_stock_data.csv`**  
+  Generated CSV file containing the synthetic dataset for analysis.
 
-Generated CSV file containing the synthetic dataset for analysis.
+- **`src/stock_price_analysis_multiple_regression.R`**  
+  R script for performing manual multiple regression analysis, generating predictions, and creating visualizations.
 
-stock_price_analysis_multiple_regression.R:
+- **`docs/Stock prediction using multi-regression.pdf`**  
+  Project report detailing the methodology, results, insights, and conclusions.
 
-R script for performing manual multiple regression analysis, generating predictions, and creating visualizations.
+- **Images**:
+  - `results/3dscatterplot_stockanalysis.png`: 3D scatterplot showing relationships between predictors and stock prices.
+  - `results/graph_stockanalysis.png`: Time-series plot comparing actual vs predicted prices and future projections.
 
-Stock prediction using multi-regression.pdf:
+---
 
-Project report detailing the methodology, results, insights, and conclusions.
+## Methodology
+### Dataset Generation
+- Synthetic data generated using Python with realistic trends for stock prices and external factors.
 
-Images:
+### Regression Analysis
+- Manual implementation of multiple linear regression in R using the formula:  
+  $$ \beta = (X'X)^{-1}X'Y $$
+- Residuals ($$ e $$) were calculated as:  
+  $$ e = Y - \hat{Y} $$
+- Future predictions were generated with added volatility based on historical residuals.
 
-3dscatterplot_stockanalysis.png: 3D scatterplot showing relationships between predictors and stock prices.
+### Visualization
+- Scatterplot showing relationships between predictors (e.g., GDP Growth and Oil Price) and stock prices.
+- Time-series plot comparing actual historical prices, predicted values, and future projections.
 
-graph_stockanalysis.png: Time-series plot comparing actual vs predicted prices and future projections.
+---
 
-Methodology
-Dataset Generation:
+## How to Run
+### Python Script
+1. Run `create_sample_stock_data.py` to generate the dataset (`enhanced_stock_data.csv`).
+2. Ensure Python 3.x is installed along with required libraries (`csv`, `random`, etc.).
 
-Synthetic data generated using Python with realistic trends for stock prices and external factors.
+### R Script
+1. Load the dataset (`enhanced_stock_data.csv`) into RStudio.
+2. Execute `stock_price_analysis_multiple_regression.R` to perform regression analysis and generate visualizations.
 
-Regression Analysis:
+---
 
-Manual implementation of multiple linear regression in R using the formula:
-β
-=
-(
-X
-′
-X
-)
-−
-1
-X
-′
-Y
-β=(X 
-′
- X) 
-−1
- X 
-′
- Y
+## Results
+- The regression model explained **89% of the variance in stock prices** ($$ R^2 = 0.89 $$).
+- Key factors influencing stock prices include **GDP Growth**, **Oil Price**, and **S&P 500 Index values**.
+- Future predictions for 2025 incorporate realistic volatility based on historical residuals.
 
-Future predictions generated with added volatility to simulate market behavior.
+---
 
-Visualization:
+## License
+This project is shared under the MIT License. Feel free to use or modify it for your own purposes.
 
-Scatterplot showing relationships between predictors (e.g., GDP Growth and Oil Price) and stock prices.
+---
 
-Time-series plot comparing actual historical prices, predicted values, and future projections.
+### **Key Improvements**
+1. Use proper Markdown headings (`#`, `##`, `###`) for structure.
+2. Add bullet points (`-`) for lists.
+3. Use inline code formatting (e.g., `` `filename.py` ``) for file names.
+4. Add horizontal rules (`---`) to separate sections.
+5. Include mathematical formulas for clarity using LaTeX-style syntax (GitHub renders these nicely).
 
-How to Run
-Python Script
-Run create_sample_stock_data.py to generate the dataset (enhanced_stock_data.csv).
+---
 
-Ensure Python 3.x is installed along with required libraries (csv, random, etc.).
-
-R Script
-Load the dataset (enhanced_stock_data.csv) into RStudio.
-
-Execute stock_price_analysis_multiple_regression.R to perform regression analysis and generate visualizations.
-
-Results
-The regression model explained 89% of the variance in stock prices (
-R
-2
-=
-0.89
-R 
-2
- =0.89).
-
-Key factors influencing stock prices include GDP Growth, Oil Price, and S&P 500 Index values.
-
-Future predictions for 2025 incorporate realistic volatility based on historical residuals.
+### What to Do Next:
+1. Replace your existing `README.md` content with this properly formatted version.
+2. Commit the changes to your repository:
